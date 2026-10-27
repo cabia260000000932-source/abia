@@ -5,46 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student E-Portfolio</title>
 
-  <!-- Connection 1: External CSS Link -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Fonts (optional: the page still works without internet) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Connection 2: External JavaScript Link -->
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
 
   <header>
     <nav>
-      <h2>Clyde Wedan C. Abia</h2>
-      <!-- Dynamic Target 1: Dark Mode Toggle -->
-      <button id="theme-btn">Toggle Dark Mode</button>
+      <a class="brand" href="#hero">Clyde Wedan C. Abia</a>
+      <ul class="links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-btn" type="button" aria-pressed="false">Dark mode</button>
     </nav>
   </header>
 
   <main>
+    <!-- HERO: a code window that types itself out -->
     <section id="hero">
-      <h1>Welcome to My E-Portfolio</h1>
-      <p>1st Year Information Technology Student</p>
+      <div class="hero-text">
+        <h1>Hi, I'm Clyde. I'm learning to build for the web.</h1>
+        <p>1st year Information Technology student. This portfolio is where I show what I've made so far.</p>
+        <a class="btn" href="#projects">See my projects</a>
+      </div>
+
+      <div class="editor" aria-label="Code snippet about me">
+        <div class="editor-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="filename">about-me.js</span>
+        </div>
+<pre id="code">const student = {
+  name: "Clyde Wedan C. Abia",
+  year: 1,
+  course: "Information Technology",
+  learning: ["HTML", "CSS", "JavaScript"],
+  goal: "Build useful things"
+};</pre>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About me</h2>
+      <p class="lead">I'm a first-year IT student who enjoys figuring out how websites work. Right now I'm focused on the basics: structure with HTML, style with CSS, and behavior with JavaScript.</p>
+
+      <h3>Skills</h3>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript (basics)</li>
+        <li>Problem solving</li>
+        <li>Teamwork</li>
+      </ul>
     </section>
 
     <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="card">
-        <h3>Web Integration Lab</h3>
-        <p>A demonstration of linking HTML, CSS, and JS.</p>
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Web Integration Lab</h3>
+          <p>Linked HTML, CSS, and JavaScript into one working page with a dark mode toggle.</p>
+          <p class="tags">HTML, CSS, JavaScript</p>
+          <a href="#" class="card-link">View project</a>
+        </article>
+
+        <article class="card">
+          <h3>Project name</h3>
+          <p>Replace this with a short description of what you built and what it does.</p>
+          <p class="tags">Tools you used</p>
+          <a href="#" class="card-link">View project</a>
+        </article>
+
+        <article class="card">
+          <h3>Project name</h3>
+          <p>Replace this with a short description of what you built and what it does.</p>
+          <p class="tags">Tools you used</p>
+          <a href="#" class="card-link">View project</a>
+        </article>
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <!-- Dynamic Target 2: Interactive Alert Button -->
-      <button id="contact-btn">Get in Touch</button>
+      <p class="lead">Want to work together or ask something? Send a message.</p>
+
+      <form id="contact-form" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button id="contact-btn" type="submit">Send message</button>
+        <p id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
 
   <footer>
-    <!-- Dynamic Target 3: Year Injection -->
-    <p>&copy; <span id="year"></span> All Rights Reserved.</p>
+    <p>&copy; <span id="year"></span> Clyde Wedan C. Abia</p>
   </footer>
 
 </body>
